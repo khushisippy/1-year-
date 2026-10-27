@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY 1st YEAR TOGETHER  ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #ffd6e5, #fff0f5);
+            color: #9b3159;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: white;
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 35px #d98ca833;
+            position: relative;
+            z-index: 1;
+        }
+
+        .heart {
+            font-size: 65px;
+            animation: beat 1s infinite;
+        }
+
+        .small {
+            letter-spacing: 3px;
+            font-size: 12px;
+            margin: 15px 0;
+        }
+
+        h1 {
+            color: #d94f82;
+            font-size: clamp(30px, 7vw, 42px);
+            margin-bottom: 18px;
+        }
+
+        h2 {
+            font-size: 21px;
+            margin-bottom: 18px;
+        }
+
+        p {
+            line-height: 1.8;
+        }
+
+        .divider {
+            margin: 22px;
+            color: #e77da1;
+        }
+
+        button {
+            background: #d94f82;
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #b83265;
+        }
+
+        .letter {
+            margin-top: 28px;
+            padding: 22px;
+            background: #fff0f5;
+            border-radius: 18px;
+            line-height: 1.9;
+        }
+
+        .letter p {
+            margin: 15px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 13px;
+        }
+
+        .floating-heart {
+            position: fixed;
+            bottom: -30px;
+            animation: floatUp 5s linear forwards;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        @keyframes beat {
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes floatUp {
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heart">💗</div>
+
+        <p class="small">A LITTLE SURPRISE FOR YOU</p>
+
+        <h1>Happy 1 year of togherness🦍!</h1>
+
+        <h2>To my favourite person, my love ❤️</h2>
+
+        <p>
+            One year down, forever to go.(lets see 😏forever hai ya nhi)
+            Every moment with you was very special. 😞
+        </p>
+
+        <div class="divider">♡ ♡ ♡</div>
+
+        <p>Are you ready for your surprise, baby?</p>
+
+        <button id="surpriseBtn">Open Your Surprise 💌</button>
+
+        <div id="letter" class="letter hidden">
+
+            <h2>To My tinguu🧸🫵🤏 💕</h2>
+
+            <p>Happy one year to us, baby! 🥹❤️</p>
+
+            <p>
+                happy 1 year together babu or years honge ya nhi idk but yeah this was special for me 
+                 like i didt expect you will text me that day but yeah you did Thank you .
+            </p>
+
+            <p>
+                No matter what life brings us,
+                I hope we keep choosing each other,
+                supporting each other and growing together.
+            </p>
+
+            <p>
+                You are so special to me, and I am
+                grateful that i have you.
+            </p>
+
+            <h3>I love you, always and forever. 💗</h3>
+
+            
+
+        </div>
+
+        <p class="footer">Made with all my love, just for you 💋🫵🎸🦍</p>
+
+    </div>
+
+    <script>
+        const button = document.getElementById("surpriseBtn");
+        const letter = document.getElementById("letter");
+
+        button.addEventListener("click", function () {
+
+            letter.classList.remove("hidden");
+            button.textContent = "I love you so much! ❤️";
+            button.disabled = true;
+
+            for (let i = 0; i < 30; i++) {
+                setTimeout(createHeart, i * 150);
+            }
+
+        });
+
+        function createHeart() {
+            const heart = document.createElement("span");
+
+            heart.className = "floating-heart";
+            heart.textContent = ["💗", "💕", "💖", "❤️", "💘"][
+                Math.floor(Math.random() * 5)
+            ];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (18 + Math.random() * 25) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(function () {
+                heart.remove();
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
